@@ -131,13 +131,13 @@
   /* ── Processing ─────────────────────────────────────────────── */
   const steps = [
     { id: 'step1', label: 'Upload complete', delay: 0     },
-    { id: 'step2', label: 'Analysing audio', delay: 600   },
+    { id: 'step2', label: 'Analyzing audio', delay: 600   },
     { id: 'step3', label: 'Separating stems', delay: 1800 },
     { id: 'step4', label: 'Finalising tracks', delay: 3000 },
   ];
 
   const statusMessages = [
-    'Analysing frequency spectrum…',
+    'Analyzing frequency spectrum…',
     'Running spectral separation…',
     'Reconstructing vocal track…',
     'Reconstructing accompaniment…',

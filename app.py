@@ -102,7 +102,7 @@ def separate_audio(input_path: str, session_dir: str) -> None:
     accompaniment_stereo = np.stack([accompaniment_filtered, -accompaniment_filtered], axis=1)
     vocals_stereo = np.stack([vocals, vocals], axis=1)
 
-    def normalise(arr):
+    def normalize(arr):
         peak = np.max(np.abs(arr))
         if peak > 0:
             arr = arr / peak * 0.9
@@ -111,8 +111,8 @@ def separate_audio(input_path: str, session_dir: str) -> None:
     vocals_path = os.path.join(session_dir, TRACK_FILES['vocals'])
     accompaniment_path = os.path.join(session_dir, TRACK_FILES['accompaniment'])
 
-    sf.write(vocals_path, normalise(vocals_stereo), sample_rate)
-    sf.write(accompaniment_path, normalise(accompaniment_stereo), sample_rate)
+    sf.write(vocals_path, normalize(vocals_stereo), sample_rate)
+    sf.write(accompaniment_path, normalize(accompaniment_stereo), sample_rate)
 
 
 @app.route('/')
